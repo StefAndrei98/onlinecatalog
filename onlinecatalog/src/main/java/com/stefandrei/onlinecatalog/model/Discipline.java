@@ -14,7 +14,13 @@ import java.util.List;
 public class Discipline {
     @Id
     private String disciplineName;
-    @OneToMany(mappedBy = "discipline")
+    @OneToMany(mappedBy = "discipline" , cascade = CascadeType.ALL)
     private List<Professor> professor;
+
+    @ManyToMany(mappedBy = "disciplines")
+    private List<Student> students;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private SchoolGroup schoolGroup;
 
 }

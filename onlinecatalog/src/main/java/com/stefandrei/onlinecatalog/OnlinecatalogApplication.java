@@ -23,24 +23,33 @@ public class OnlinecatalogApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 
-		// DEMO SALVARE & UPDATE !
+		// DEMO SAVE & UPDATE !
 
-		Student student = new Student ();
-		student.setFirstName ("Stefanescu");
-		student.setLastName ("Andrei");
-
-		Student student2 = new Student ();
-		student2.setFirstName ("Stefanescu");
-		student2.setLastName ("Andrei");
-
-		studentRepository.save (student);
-		studentRepository.save (student2);
-
-		for (Student s: studentRepository.findAll ()
-			 ) {
-			System.out.println (s.getStudentId () + " . " + student.getFirstName () + " " + student.getLastName ());
-		}
-		
+//		Student student = new Student ();
+//		student.setFirstName ("Stephan");
+//		student.setLastName ("Andrei");
+//
+//		Student student2 = new Student ();
+//		student2.setFirstName ("Stephan");
+//		student2.setLastName ("Andrei");
+//
+//		studentRepository.save (student);
+//		studentRepository.save (student2);
+//
+//
+//		System.out.println ("**************** Before Delete ****************");
+//		for (Student s: studentRepository.findAll ()
+//			 ) {
+//			System.out.println (s.getStudentId () + " . " + student.getFirstName () + " " + student.getLastName ());
+//		}
+//
+//		System.out.println ("**************** After Delete ****************");
+//		studentRepository.deleteById (2);
+//
+//		for (Student s: studentRepository.findAll ()
+//		) {
+//			System.out.println (s.getStudentId () + " . " + student.getFirstName () + " " + student.getLastName ());
+//		}
 
 	}
 }
