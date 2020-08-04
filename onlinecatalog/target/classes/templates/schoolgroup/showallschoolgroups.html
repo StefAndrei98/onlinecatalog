@@ -24,20 +24,20 @@
 <body>
 
 <div class="container">
-    <h1>Students</h1>
+    <h1>School Group</h1>
     <table>
         <thead>
         <tr>
             <td>
-                <h5><b>Student ID</b></h5>
+                <h5><b>School Group ID</b></h5>
             </td>
 
             <td>
-                <h5><b>Student first Name</b></h5>
+                <h5><b>School Group Name</b></h5>
             </td>
 
             <td>
-                <h5><b>Student last Name</b></h5>
+                <h5><b>School Group Year </b></h5>
             </td>
 
             <td>
@@ -46,17 +46,16 @@
 
         </tr>
         </thead>
-        <tbody th:each="s: ${students}">
+        <tbody th:each="s: ${schoolgroups}">
         <tr>
-            <td th:text="${s.studentId}"></td>
-            <td th:text="${s.firstName}"></td>
-            <td th:text="${s.lastName}"></td>
+            <td th:text="${s.schoolgroupsId}"></td>
+            <td th:text="${s.schoolgroupsName}"></td>
+            <td th:text="${s.schoolgroupsYear}"></td>
             <td>
-                <a th:href="@{/editstudent/{id}(id=${s.studentId})}"><i class="small material-icons">edit</i></a>
-                <a th:href="@{/deletestudent/{id}(id=${s.studentId})}"><i class="small material-icons">delete</i></a>
+                <!--                <a th:href="@{/editstudent/{id}(id=${s.studentId})}"><i class="small material-icons">edit</i></a>-->
+                <!--                <a th:href="@{/deletestudent/{id}(id=${s.studentId})}"><i class="small material-icons">delete</i></a>-->
 
             </td>
-
         </tr>
         </tbody>
     </table>

@@ -16,19 +16,53 @@
     <meta charset="UTF-8" xmlns:th="http://www.thyneleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <title>Professor view</title>
 
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo right">School Catalog</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a th:href="@{/}"><i class="small material-icons">home</i></a></li>
-                <li><a th:href="@{/addstudent}"><i class="small material-icons">add</i></a></li>
-            </ul>
-        </div>
+    <!-- Navigation source !   -->
+    <nav th:include="_menu.html :: menu_nav">
     </nav>
 
 
 </head>
 <body>
+
+<div class="container">
+    <h1>Professor</h1>
+    <table>
+        <thead>
+        <tr>
+            <td>
+                <h5><b>Professor ID</b></h5>
+            </td>
+
+            <td>
+                <h5><b>Professor first Name</b></h5>
+            </td>
+
+            <td>
+                <h5><b>Professor last Name</b></h5>
+            </td>
+
+            <td>
+                <h5><b>Actions</b></h5>
+            </td>
+
+        </tr>
+        </thead>
+        <tbody th:each="p: ${professors}">
+        <tr>
+            <td th:text="${p.professorId}"></td>
+            <td th:text="${p.professorFirstName}"></td>
+            <td th:text="${p.professorLastName}"></td>
+            <td>
+                <a th:href="@{/editprofessor/{id}(id=${p.professorId})}"><i class="small material-icons">edit</i></a>
+                <a th:href="@{/deleteprofessor/{id}(id=${p.professorId})}"><i
+                        class="small material-icons">delete</i></a>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>

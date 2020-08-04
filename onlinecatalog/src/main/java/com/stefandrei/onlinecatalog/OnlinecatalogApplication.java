@@ -1,7 +1,10 @@
 package com.stefandrei.onlinecatalog;
 
+import com.stefandrei.onlinecatalog.model.Professor;
 import com.stefandrei.onlinecatalog.model.Student;
 import com.stefandrei.onlinecatalog.repository.StudentRepository;
+import com.stefandrei.onlinecatalog.service.ProfessorService;
+import com.stefandrei.onlinecatalog.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,30 +13,29 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class OnlinecatalogApplication implements CommandLineRunner {
 
-	@Autowired
-	private StudentRepository studentRepository;
+    @Autowired
+    private ProfessorService professorService;
 
 
+    public static void main(String[] args) {
+        SpringApplication.run (OnlinecatalogApplication.class, args);
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(OnlinecatalogApplication.class, args);
-	}
-
-	@Override
-	public void run(String... args) throws Exception {
+    @Override
+    public void run(String... args) throws Exception {
 
 
-		// DEMO SAVE & UPDATE !
+        // DEMO SAVE & UPDATE !
 
-//		Student student = new Student ();
-//		student.setFirstName ("Stephan");
-//		student.setLastName ("Andrei");
+//		Professor professor = new Professor ();
+//		professor.setProfessorFirstName ("Don");
+//		professor.setProfessorLastName ("John");
 //
 //		Student student2 = new Student ();
 //		student2.setFirstName ("Stephan");
 //		student2.setLastName ("Andrei");
 //
-//		studentRepository.save (student);
+//		professorService.save (professor);
 //		studentRepository.save (student2);
 //
 //
@@ -51,5 +53,5 @@ public class OnlinecatalogApplication implements CommandLineRunner {
 //			System.out.println (s.getStudentId () + " . " + student.getFirstName () + " " + student.getLastName ());
 //		}
 
-	}
+    }
 }

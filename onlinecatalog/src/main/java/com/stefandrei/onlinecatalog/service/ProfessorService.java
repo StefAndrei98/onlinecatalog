@@ -1,9 +1,7 @@
 package com.stefandrei.onlinecatalog.service;
 
 import com.stefandrei.onlinecatalog.model.Professor;
-import com.stefandrei.onlinecatalog.model.Student;
 import com.stefandrei.onlinecatalog.repository.ProfessorRepository;
-import com.stefandrei.onlinecatalog.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

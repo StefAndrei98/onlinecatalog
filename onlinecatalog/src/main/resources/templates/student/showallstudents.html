@@ -16,14 +16,8 @@
     <meta charset="UTF-8">
     <title>Students view</title>
 
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo right">School Catalog</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a th:href="@{/}"><i class="small material-icons">home</i></a></li>
-                <li><a th:href="@{/addstudent}"><i class="small material-icons">add</i></a></li>
-            </ul>
-        </div>
+    <!-- Navigation source !   -->
+    <nav th:include="_menu.html :: menu_nav">
     </nav>
 
 </head>
@@ -31,41 +25,41 @@
 
 <div class="container">
     <h1>Students</h1>
-<table>
-<thead>
-    <tr>
-        <td>
-            Student ID
-        </td>
+    <table>
+        <thead>
+        <tr>
+            <td>
+                <h5><b>Student ID</b></h5>
+            </td>
 
-        <td>
-            Student first Name
-        </td>
+            <td>
+                <h5><b>Student first Name</b></h5>
+            </td>
 
-        <td>
-            Student last Name
-        </td>
+            <td>
+                <h5><b>Student last Name</b></h5>
+            </td>
 
-        <td>
-        Actions
-        </td>
+            <td>
+                <h5><b>Actions</b></h5>
+            </td>
 
-    </tr>
-</thead>
-    <tbody th:each = "s: ${students}">
-    <tr>
-        <td th:text = "${s.studentId}"></td>
-        <td th:text = "${s.firstName}"></td>
-        <td th:text = "${s.lastName}"></td>
-        <td>
-          <a th:href="@{/editstudent/{id}(id=${s.studentId})}"><i class="small material-icons">edit</i></a>
-            <a th:href="@{/deletestudent/{id}(id=${s.studentId})}"><i class="small material-icons">delete</i></a>
+        </tr>
+        </thead>
+        <tbody th:each="s: ${students}">
+        <tr>
+            <td th:text="${s.studentId}"></td>
+            <td th:text="${s.firstName}"></td>
+            <td th:text="${s.lastName}"></td>
+            <td>
+                <a th:href="@{/editstudent/{id}(id=${s.studentId})}"><i class="small material-icons">edit</i></a>
+                <a th:href="@{/deletestudent/{id}(id=${s.studentId})}"><i class="small material-icons">delete</i></a>
 
-        </td>
+            </td>
 
-                    </tr>
-            </tbody>
-        </table>
+        </tr>
+        </tbody>
+    </table>
 </div>
-    </body>
+</body>
 </html>
