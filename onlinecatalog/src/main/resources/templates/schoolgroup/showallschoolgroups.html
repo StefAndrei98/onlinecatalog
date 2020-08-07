@@ -46,14 +46,14 @@
 
         </tr>
         </thead>
-        <tbody th:each="s: ${schoolgroups}">
+        <tbody th:each="g: ${schoolgroups}">
         <tr>
-            <td th:text="${s.schoolgroupsId}"></td>
-            <td th:text="${s.schoolgroupsName}"></td>
-            <td th:text="${s.schoolgroupsYear}"></td>
+            <td th:text="${g.schoolgroupsId}"></td>
+            <td th:text="${g.schoolgroupsName}"></td>
+            <td th:text="${g.schoolgroupsYear}"></td>
             <td>
-                <!--                <a th:href="@{/editstudent/{id}(id=${s.studentId})}"><i class="small material-icons">edit</i></a>-->
-                <!--                <a th:href="@{/deletestudent/{id}(id=${s.studentId})}"><i class="small material-icons">delete</i></a>-->
+                <a th:href="@{/editschoolgroup/{id}(id=${g.groupId})}"><i class="small material-icons">edit</i></a>
+                <a th:href="@{/deleteschoolgroup/{id}(id=${g.groupId})}"><i class="small material-icons">delete</i></a>
 
             </td>
         </tr>

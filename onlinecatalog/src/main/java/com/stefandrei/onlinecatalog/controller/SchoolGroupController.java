@@ -1,6 +1,5 @@
 package com.stefandrei.onlinecatalog.controller;
 
-import com.stefandrei.onlinecatalog.model.Professor;
 import com.stefandrei.onlinecatalog.model.SchoolGroup;
 import com.stefandrei.onlinecatalog.service.SchoolGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
