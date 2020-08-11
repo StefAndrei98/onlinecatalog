@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <meta charset="UTF-8">
-    <title>Students view</title>
+    <title>School Group Students view</title>
 
     <!-- Navigation source !   -->
     <nav th:include="_menu.html :: menu_nav">
@@ -24,20 +24,20 @@
 <body>
 
 <div class="container">
-    <h1>School Group</h1>
+    <h1>Students</h1>
     <table>
         <thead>
         <tr>
             <td>
-                <h5><b>School Group ID</b></h5>
+                <h5><b>Student ID</b></h5>
             </td>
 
             <td>
-                <h5><b>School Group Name</b></h5>
+                <h5><b>Student first Name</b></h5>
             </td>
 
             <td>
-                <h5><b>School Group Year </b></h5>
+                <h5><b>Student last Name</b></h5>
             </td>
 
             <td>
@@ -46,18 +46,17 @@
 
         </tr>
         </thead>
-        <tbody th:each="g: ${schoolgroups}">
+        <tbody th:each="s: ${students}">
         <tr>
-            <td th:text="${g.groupId}"></td>
-            <td th:text="${g.groupName}"></td>
-            <td th:text="${g.groupYear}"></td>
+            <td th:text="${s.studentId}"></td>
+            <td th:text="${s.firstName}"></td>
+            <td th:text="${s.lastName}"></td>
             <td>
-                <a th:href="@{/editschoolgroup/{id}(id=${g.groupId})}"><i class="small material-icons">edit</i></a>
-                <a th:href="@{/deleteschoolgroup/{id}(id=${g.groupId})}"><i class="small material-icons">delete</i></a>
-                <a th:href="@{/group/{id}/students(id=${g.groupId})}"><i class="small material-icons">child_care</i></a>
-
+                <a th:href="@{/editstudent/{id}(id=${s.studentId})}"><i class="small material-icons">edit</i></a>
+                <a th:href="@{/deletestudent/{id}(id=${s.studentId})}"><i class="small material-icons">delete</i></a>
 
             </td>
+
         </tr>
         </tbody>
     </table>

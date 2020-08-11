@@ -1,6 +1,7 @@
 package com.stefandrei.onlinecatalog.service;
 
 import com.stefandrei.onlinecatalog.model.SchoolGroup;
+import com.stefandrei.onlinecatalog.model.Student;
 import com.stefandrei.onlinecatalog.repository.SchoolGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,4 +36,7 @@ public class SchoolGroupService {
         schoolGroupRepository.deleteById (id);
     }
 
+    public List<Student> findStudentByGroup(Integer id) {
+       return schoolGroupRepository.findById (id).get ().getStudents ();
+    }
 }

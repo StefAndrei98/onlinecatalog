@@ -24,7 +24,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <form class="col s12" th:action="@{/editschoolgroup/{id}(id=${student.studentId})}" th:object="${student}"
+        <form class="col s12" th:action="@{/editschoolgroup/{id}(id=${schoolgroup.groupId})}" th:object="${schoolgroup}"
               method="post">
             <div class="container">
                 <h1>Edit student</h1>
@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="col s12">
                         <label for="group_year"><b> Group Year </b></label>
-                        <input th:field="*{groupYear}" id="group_year" type="text" , placeholder="Group Year"
+                        <input th:field="*{groupYear}" id="group_year" type="date" , placeholder="Group Year"
                                name="group_year" required>
                     </div>
                 </div>

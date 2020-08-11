@@ -7,6 +7,11 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -19,6 +24,14 @@
     <!-- Navigation source !   -->
     <nav th:include="_menu.html :: menu_nav">
     </nav>
+
+    <script>
+        $(document).ready(function() {
+            $('select').formSelect();
+        });
+    </script>
+
+
 
 </head>
 <body>
@@ -43,7 +56,20 @@
                            required>
                 </div>
             </div>
-            <button type="submit"><i class="small material-icons">add</i></button>
+
+                    <div class="row">
+                        <div class="col s12">
+                            <label for="school_group"><b> School Group </b></label>
+                            <select id="school_group" th:field="*{schoolGroup.groupId}" >
+                                <option th:each="sc: ${schoolgroups}" th:value="${sc.groupId}"
+                                        th:text="${sc.groupName + ' ' + sc.groupYear}"/>
+                            </select>
+                        </div>
+                    </div>
+
+            <div>
+                <button type="submit"><i class="small material-icons">add</i></button>
+            </div>
         </div>
     </form>
 </div>

@@ -2,6 +2,7 @@ package com.stefandrei.onlinecatalog.controller;
 
 import com.stefandrei.onlinecatalog.model.Student;
 import com.stefandrei.onlinecatalog.repository.StudentRepository;
+import com.stefandrei.onlinecatalog.service.SchoolGroupService;
 import com.stefandrei.onlinecatalog.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,9 @@ public class StudentController {
    // private StudentRepository studentRepository;
     private StudentService studentService;
 
+    @Autowired
+    private SchoolGroupService schoolGroupService;
+
     @GetMapping("allstudents")
     public String showAllStudents(Model model){
 
@@ -31,7 +35,9 @@ public class StudentController {
 
     @GetMapping("/addstudent")
     public String addstudent(Model model){
+
         model.addAttribute ("student" , new Student ());
+        model.addAttribute ("schoolgroups" , schoolGroupService.findAll ());
 
         return "student/addstudent";
     }
@@ -48,17 +54,20 @@ public class StudentController {
     public String editstudent(Model model , @PathVariable Integer id){
         Student student = studentService.findById (id);
         model.addAttribute ("student" , student);
+        model.addAttribute ("schoolgroups" , schoolGroupService.findAll ());
 
         return "student/editstudent";
     }
 
     @PostMapping("/editstudent/{id}")
     public String editstudent(@ModelAttribute Student student , @PathVariable Integer id){
-        Student database_student = studentService.findById (id);
-        database_student.setFirstName (student.getFirstName ());
-        database_student.setLastName (student.getLastName ());
-        //System.out.println (database_student);
-        studentService.save (database_student);
+
+//        Student database_student = studentService.findById (id); // to be able to update that id, get it from database
+//        database_student.setFirstName (student.getFirstName ()); // update fields
+//        database_student.setLastName (student.getLastName ());
+//        studentService.save (database_student);
+        studentService.save (student);
+
 
         return "redirect:/allstudents";
     }

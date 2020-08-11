@@ -48,12 +48,14 @@
         </thead>
         <tbody th:each="g: ${schoolgroups}">
         <tr>
-            <td th:text="${g.schoolgroupsId}"></td>
-            <td th:text="${g.schoolgroupsName}"></td>
-            <td th:text="${g.schoolgroupsYear}"></td>
+            <td th:text="${g.groupId}"></td>
+            <td th:text="${g.groupName}"></td>
+            <td th:text="${g.groupYear}"></td>
             <td>
                 <a th:href="@{/editschoolgroup/{id}(id=${g.groupId})}"><i class="small material-icons">edit</i></a>
                 <a th:href="@{/deleteschoolgroup/{id}(id=${g.groupId})}"><i class="small material-icons">delete</i></a>
+                <a th:href="@{/group/{id}/students(id=${g.groupId})}"><i class="small material-icons">child_care</i></a>
+
 
             </td>
         </tr>

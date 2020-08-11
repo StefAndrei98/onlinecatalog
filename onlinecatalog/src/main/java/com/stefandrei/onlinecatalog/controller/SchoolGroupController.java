@@ -20,7 +20,7 @@ public class SchoolGroupController {
     @GetMapping("allschoolgroups")
     public String showAllSchoolGroup(Model model){
         List<SchoolGroup> schoolGroupList = schoolGroupService.findAll();
-        model.addAttribute ("schoolgroup" , schoolGroupList);
+        model.addAttribute ("schoolgroups" , schoolGroupList);
         return "schoolgroup/showallschoolgroups";
     }
 
@@ -54,14 +54,22 @@ public class SchoolGroupController {
         database_schoolgroup.setGroupYear (schoolGroup.getGroupYear ());
         schoolGroupService.save (database_schoolgroup);
 
-        return "redirect:/allprofessors";
+        return "redirect:/allschoolgroups";
     }
 
     @GetMapping("/deleteschoolgroup/{id}")
     public String deleteprofessor(@PathVariable Integer id){
         schoolGroupService.deleteById(id);
 
-        return "redirect:/allschoolgroup";
+        return "redirect:/allschoolgroups";
+    }
+
+    @GetMapping("group/{id}/students")
+    public String viewStudentsInGroup(Model model , @PathVariable Integer id){
+
+        model.addAttribute ("students" , schoolGroupService.findStudentByGroup(id));
+
+        return "viewstudents";
     }
 
 }
