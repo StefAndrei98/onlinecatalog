@@ -18,7 +18,7 @@ public class SchoolGroup {
     private Date groupYear;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int groupId;
 
     @OneToMany(mappedBy = "schoolGroup" , cascade = CascadeType.ALL)

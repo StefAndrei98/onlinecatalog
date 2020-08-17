@@ -18,6 +18,6 @@ public class Professor {
     private Discipline discipline;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int professorId;
 }

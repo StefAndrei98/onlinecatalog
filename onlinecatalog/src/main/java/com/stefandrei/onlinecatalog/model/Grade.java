@@ -16,7 +16,7 @@ import java.util.List;
 public class Grade {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int gradeId;
 
     private double grade;
