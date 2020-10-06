@@ -1,0 +1,19 @@
+<nav th:fragment="navigation" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <link rel="stylesheet" th:href="@{/css/nav_style.css}">
+<header>
+    <img class="logo_forum" th:src="@{/img/LogoBuhai.png}" alt="logo">
+    <nav>
+        <ul class="nav_links">
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a href="#">Show</a></li>
+            <li><a th:href="@{/onlytitle}">Titles</a></li>
+            <li><a th:href="@{/showtopic}">Topics</a></li>
+            <li><a th:href="@{/actiontopic}">AddContent</a></li>
+
+        </ul>
+    </nav>
+    <a class="nav_btn" href="#">
+        <button>Logout</button>
+    </a>
+</header>
+</nav>

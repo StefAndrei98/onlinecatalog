@@ -1,0 +1,33 @@
+body{
+    background-image:url('../img/CloadsBG.png');
+    background-repeat: no-repeat;
+    width:100%;
+}
+
+
+table{
+position:absolute;
+top:25%;
+left:25%;
+font-weight: 500;
+}
+
+th , td {
+
+padding: 10px 15px ;
+
+font-family: "Carter One" , sans-serif;
+font-weight: 300;
+font-size: 16px;
+color: #edf0f1;
+text-decoration: none;
+
+}
+
+h1{
+font-family: "Carter One" , sans-serif;
+font-weight: 300;
+font-size: 16px;
+color: #edf0f1;
+text-decoration: none;
+}

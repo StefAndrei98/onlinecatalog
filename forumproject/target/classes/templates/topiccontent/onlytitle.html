@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" th:href="@{/css/onlytitle.css}">
+
+    <title>All Topics</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+
+    <!--    Navigate-->
+    <nav th:include="navigation.html :: navigation">
+    </nav>
+
+    <!--    Navigate-->
+
+</head>
+<body>
+
+ <table>
+     <tbody th:each="s: ${topic}">
+        <tr>
+            <td th:text="${s.topicTitle}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

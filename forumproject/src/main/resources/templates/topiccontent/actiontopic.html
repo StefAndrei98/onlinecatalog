@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" th:href="@{/css/actiontopicstyle.css}">
+    <meta charset="UTF-8">
+    <title>Topic Post</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+
+    <!--    Navigate-->
+    <nav th:include="navigation.html :: navigation">
+    </nav>
+
+    <!--    Navigate-->
+
+
+</head>
+<body>
+<form class="positionContentCenter" th:action="@{/actiontopic}" th:object="${topic}" method="post">
+    <div>
+        <h1>Start Topic</h1>
+        <hr>
+        <div>
+            <div>
+                <label for="topic_title"><h1> Title </h1></label>
+                <input class="input_area" th:field="*{topicTitle}" id="topic_title" type="text" ,
+                       placeholder="Title Topic"
+                       name="topic_title" required>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="topic_title"><h1> Content </h1></label>
+                <textarea class="input_area" cols="50" rows="10" th:field="*{topicContent}" id="topic_content"
+                      placeholder="Add your content here !" name="topic_content" required>
+            </textarea>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit">Start topic</button>
+        </div>
+    </div>
+</form>
+</div>
+<hr>
+</body>
+</html>

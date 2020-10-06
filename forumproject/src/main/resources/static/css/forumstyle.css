@@ -1,0 +1,66 @@
+ * {
+box-sizing: border-box;
+}
+
+
+.column {
+  float: left;
+  padding: 10px;
+  height: 600px ;
+}
+
+.left, .right {
+  width: 25%;
+  text-align:center;
+
+  font-family: "Carter One" , sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+
+}
+
+.middle {
+  width: 50%;
+
+  font-family: "Carter One" , sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+
+}
+
+.elementInside{
+text-align:center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+
+body{
+width:100%;
+ background-image: url('../img/CloadsBG.png');
+    background-repeat: no-repeat;
+}
+
+.addContent{
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 30px 10%;
+}
+
+
+.tableposition{
+  align-items: center;
+  width: 50% ;
+}
+
+
+
